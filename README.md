@@ -5,7 +5,6 @@ For this task, we'll assume that this hypothesis is true. Your task is to implem
 whole wikipedia from any root page and save it to the DB.
 
 * You don't have to worry about DB part, it's already implemented.
-* You don't have to worry about page retrieval part, it's already implemented.
 
 ## Acceptance Criteria
 1. After using POST `/wiki/scrap` with root link that does exist, program should scrap all the pages in wikipedia and save them to the database
@@ -19,7 +18,7 @@ whole wikipedia from any root page and save it to the DB.
 1. Implement `WikiScrapper` class in domain module considering the following:
    1. Write tests for domain module
    2. Think about looped wikiPages (for example, wikiPage1 -> wikiPage2 & wikiPage2 -> wikiPage1)
-   3. It should be able to work with both `html` & `json` readers (see `HtmlWikiClient` and `JsonWikiClient` for the client to use to read the local resources)
+   3. It should be able to work with both `html` & `json` readers. This means that you need to implement both `HtmlClient` and `JsonClient` so that they can be used interchangeably by `WikiScrapper` (choose whatever strategy you consider best to achieve this). Check local resources in the modules in order to understand the format used.
 2. Wire deps in `WikiScrapperConfiguration` 
 3. Implement `WikiScrapperResource` to call `WikiScrapper`
    1. 404 httpStatus should be returned for not existing `WikiPage`
