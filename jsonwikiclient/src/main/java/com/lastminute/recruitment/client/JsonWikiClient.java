@@ -11,6 +11,6 @@ public class JsonWikiClient implements WikiClient {
     // this should have a method that returns a Json representation of a Wikipedia page
     @Override
     public Optional<WikiPage> get(String link) throws WikiPageNotFound {
-        return null;
+        return Optional.empty();
     }
 }

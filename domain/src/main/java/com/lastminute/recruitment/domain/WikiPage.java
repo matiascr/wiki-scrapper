@@ -2,6 +2,7 @@ package com.lastminute.recruitment.domain;
 
 import java.util.List;
 
+
 public class WikiPage {
 
     private final String title;

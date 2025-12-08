@@ -3,6 +3,7 @@ package com.lastminute.recruitment.client;
 import com.lastminute.recruitment.domain.WikiClient;
 import com.lastminute.recruitment.domain.WikiPage;
 import com.lastminute.recruitment.domain.error.WikiPageNotFound;
+
 import java.util.Optional;
 
 
