@@ -9,6 +9,7 @@ import com.lastminute.recruitment.persistence.WikiPageRepository;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Profile;
+import org.springframework.core.io.ResourceLoader;
 
 
 @Configuration
@@ -16,14 +17,14 @@ public class WikiScrapperConfiguration {
 
     @Bean
     @Profile("json")
-    public WikiClient jsonWikiReader() {
-        return new JsonWikiClient();
+    public WikiClient jsonWikiReader(ResourceLoader resourceLoader) {
+        return new JsonWikiClient(resourceLoader);
     }
 
     @Bean
     @Profile("html")
-    public WikiClient htmlWikiReader() {
-        return new HtmlWikiClient();
+    public WikiClient htmlWikiReader(ResourceLoader resourceLoader) {
+        return new HtmlWikiClient(resourceLoader);
     }
 
     @Bean
